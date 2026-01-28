@@ -1,0 +1,5 @@
+services:
+  lucos_scheduled_scripts:
+    build: .
+    image: lucas42/lucos_scheduled_scripts
+    container_name: lucos_scheduled_scripts
