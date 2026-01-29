@@ -11,3 +11,5 @@ services:
       - SYSTEM
       - LOGANNE_ENDPOINT
       - SCHEDULE_TRACKER_ENDPOINT
+    profiles:
+      - test
