@@ -21,11 +21,11 @@ You can set `CMD`, but this is optional.
 
 ### Configuring cronjobs
 
-Pipe the output of any cronjobs to `/var/log/cron.log` in order for it to appear in the docker image's logs.
+Configure the each job in your Dockerfile using the `crontab` command
 
 For example:
 ```dockerfile
-RUN echo "* * * * * python test-script.py >> /var/log/cron.log 2>&1" | crontab -
+RUN echo "* * * * * python test-script.py" | crontab -
 ```
 
 ### Using built-in python modules
@@ -54,3 +54,10 @@ from schedule_tracker import updateScheduleTracker
 * **`system`** - The scheduled job being run.  Defaults to the `SYSTEM` environment variable, but should be set to something unique on systems with multiple scheduled jobs.
 * **`message`** - An error message indicating why the job failed.  Not applicable when `success` is True.
 * **`frequency`** - A postive integer specifying how often the job is scheduled to run, in seconds.  Defaults to 1 day.
+
+## Testing the base image locally
+Run:
+```sh
+docker compose build && docker compose --profile test up --build test
+```
+then wait for the next minute to hit for the test cron script to run.
