@@ -51,7 +51,7 @@ from schedule_tracker import updateScheduleTracker
 
 * **`type`** - The type of event being logged
 * **`humanReadable`** - A description of the event which humans can easily understand
-* **`url`** - A link to a human-readable page regarding the item which the event pertains to (**not** an API endpoint)
+* **`url`** - An optional link to a human-readable page regarding the item which the event pertains to (**not** an API endpoint)
 
 `updateScheduleTracker` takes the following parameters:
 

@@ -16,13 +16,14 @@ session.headers.update({
 	"Content-Type": "application/json",
 })
 
-def updateLoganne(type: str, humanReadable: str, url: str):
+def updateLoganne(type: str, humanReadable: str, url: str = None):
 	payload = {
 		"type": type,
 		"source": SYSTEM,
 		"humanReadable": humanReadable,
-		"url": url,
 	}
+	if url:
+		payload["url"] = url
 	try:
 		loganne_reponse = session.post(LOGANNE_ENDPOINT, json=payload)
 		loganne_reponse.raise_for_status()
