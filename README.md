@@ -36,6 +36,11 @@ Needs the following environment variables to be set:
 * `LOGANNE_ENDPOINT` - the URL of a running instance of lucos_loganne
 * `SCHEDULE_TRACKER_ENDPOINT` - the URL of a running instance of lucos_schedule_tracker
 
+If using pyenv, add the following to your `Pipfile`:
+```
+lucos-scheduled-scripts = {file = "/opt/lucos_scheduled_scripts"}
+```
+
 Import into your python script as follows:
 ```python
 from loganne import updateLoganne
