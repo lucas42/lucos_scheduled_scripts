@@ -7,7 +7,6 @@ workflows:
     jobs:
       - lucos/build-amd64:
           filters:
-            tags:
-              only: /^v.*/
             branches:
-              ignore: /.*/
+              only:
+                - main
