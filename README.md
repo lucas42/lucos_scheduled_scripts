@@ -11,7 +11,7 @@ A docker base image for python scripts which run on a schedule in the lucOS ecos
 ### Docker
 
 Start your Dockerfile with:
-```
+```dockerfile
 FROM lucas42/lucos_scheduled_scripts
 ```
 
@@ -24,7 +24,7 @@ You can set `CMD`, but this is optional.
 Pipe the output of any cronjobs to `/var/log/cron.log` in order for it to appear in the docker image's logs.
 
 For example:
-```
+```dockerfile
 RUN echo "* * * * * python test-script.py >> /var/log/cron.log 2>&1" | crontab -
 ```
 
@@ -37,7 +37,7 @@ Needs the following environment variables to be set:
 * `SCHEDULE_TRACKER_ENDPOINT` - the URL of a running instance of lucos_schedule_tracker
 
 Import into your python script as follows:
-```
+```python
 from loganne import updateLoganne
 from schedule_tracker import updateScheduleTracker
 ```
