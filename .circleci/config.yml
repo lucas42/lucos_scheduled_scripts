@@ -3,7 +3,7 @@ orbs:
   lucos: lucos/deploy@0
 workflows:
   version: 2
-  build-deploy:
+  build-publish:
     jobs:
       - lucos/build-amd64:
           filters:
