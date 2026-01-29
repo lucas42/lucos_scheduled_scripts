@@ -7,7 +7,8 @@ LOG=/var/log/cron.log
 # So do some hacky regexes to quote stuff
 env -0 | sed 's/"/\\"/g' | sed -z "s/\n/\\\\n/g" | sed 's/\x0/\n/g'| sed 's/=/="/' | sed 's/$/"/g' | sed 's/\\n/\n/g' > .env
 [ -p "$LOG" ] || mkfifo "$LOG"
-/usr/sbin/crond
+syslogd -n -O /dev/stdout &
+exec crond -f -L /dev/stdout
 
 if [ "$#" -gt 0 ]; then
 	tail -F "$LOG" &
