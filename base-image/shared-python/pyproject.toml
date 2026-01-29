@@ -1,0 +1,8 @@
+[project]
+name = "lucos_scheduled_scripts"
+version = "0.1.0"
+dependencies = [
+	"requests>=2.32.5"
+]
+[tool.setuptools]
+py-modules = ['loganne', 'schedule_tracker']

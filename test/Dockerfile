@@ -1,3 +1,4 @@
 FROM lucas42/lucos_scheduled_scripts:latest
 
-RUN echo "* * * * * echo \"Test Script\" >> /var/log/cron.log 2>&1" | crontab -
+COPY test-script.py .
+RUN echo "* * * * * cd `pwd` && python test-script.py >> /var/log/cron.log 2>&1" | crontab -

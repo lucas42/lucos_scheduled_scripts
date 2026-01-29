@@ -7,3 +7,7 @@ services:
     build: test
     image: lucas42/lucos_scheduled_scripts_test
     container_name: lucos_scheduled_scripts_test
+    environment:
+      - SYSTEM
+      - LOGANNE_ENDPOINT
+      - SCHEDULE_TRACKER_ENDPOINT

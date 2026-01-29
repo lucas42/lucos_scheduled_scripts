@@ -6,4 +6,7 @@ RUN apk add sed
 
 COPY cron.sh .
 
+COPY shared-python /opt/lucos_scheduled_scripts
+RUN pip install /opt/lucos_scheduled_scripts
+
 ENTRYPOINT [ "./cron.sh" ]
