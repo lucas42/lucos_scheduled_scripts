@@ -25,7 +25,7 @@ def updateLoganne(type: str, humanReadable: str, url: str = None):
 	if url:
 		payload["url"] = url
 	try:
-		loganne_reponse = session.post(LOGANNE_ENDPOINT, json=payload)
-		loganne_reponse.raise_for_status()
+		loganne_response = session.post(LOGANNE_ENDPOINT, json=payload)
+		loganne_response.raise_for_status()
 	except Exception as error:
 		print("\033[91m [{}] ** Error calling Loganne: {}\033[0m".format(datetime.now().isoformat(), error), flush=True)
