@@ -7,7 +7,7 @@ env -0 | sed 's/"/\\"/g' | sed -z "s/\n/\\\\n/g" | sed 's/\x0/\n/g'| sed 's/=/="
 syslogd -n -O /dev/stdout &
 
 if [ "$#" -gt 0 ]; then
-	exec crond -L /dev/stdout
+	crond -L /dev/stdout
 	exec "$@"
 else
 	exec crond -f -L /dev/stdout
