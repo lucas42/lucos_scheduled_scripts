@@ -1,7 +1,7 @@
 services:
   lucos_scheduled_scripts:
     build: base-image
-    image: lucas42/lucos_scheduled_scripts
+    image: lucas42/lucos_scheduled_scripts:${VERSION:-latest}
     container_name: lucos_scheduled_scripts
   test:
     build: test
