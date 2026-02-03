@@ -12,7 +12,7 @@ A docker base image for python scripts which run on a schedule in the lucOS ecos
 
 Start your Dockerfile with:
 ```dockerfile
-FROM lucas42/lucos_scheduled_scripts
+FROM lucas42/lucos_scheduled_scripts:<<version-number>>
 ```
 
 Avoid setting `WORKDIR` or `ENTRYPOINT`
