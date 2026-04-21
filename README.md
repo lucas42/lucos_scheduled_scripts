@@ -64,6 +64,8 @@ from schedule_tracker import updateScheduleTracker
 ## Testing the base image locally
 Run:
 ```sh
-docker compose build && docker compose --profile test up --build test
+docker compose build && docker compose -f docker-compose.yml -f docker-compose.test.yml up --build test
 ```
 then wait for the next minute to hit for the test cron script to run.
+
+The `test` service lives in `docker-compose.test.yml` rather than the main `docker-compose.yml` so that it's excluded from the CI publish step — test images shouldn't be pushed to Docker Hub.
