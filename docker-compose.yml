@@ -8,8 +8,9 @@ services:
     image: lucas42/lucos_scheduled_scripts_test
     container_name: lucos_scheduled_scripts_test
     environment:
-      - SYSTEM
-      - LOGANNE_ENDPOINT
-      - SCHEDULE_TRACKER_ENDPOINT
+      - SYSTEM=lucos_scheduled_scripts_test
+      - LOGANNE_ENDPOINT=http://loganne.test/events
+      - SCHEDULE_TRACKER_ENDPOINT=http://schedule-tracker.test/
+    command: python /root/test-interface.py
     profiles:
       - test

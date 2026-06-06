@@ -52,6 +52,7 @@ from schedule_tracker import updateScheduleTracker
 
 * **`type`** - The type of event being logged
 * **`humanReadable`** - A description of the event which humans can easily understand
+* **`level`** - Required. The significance of the event: `"detail"` (mechanical background work), `"routine"` (regular estate activity), `"notable"` (worth highlighting), or `"headline"` (estate-significant)
 * **`url`** - An optional link to a human-readable page regarding the item which the event pertains to (**not** an API endpoint)
 
 `updateScheduleTracker` takes the following parameters:
@@ -66,4 +67,4 @@ Run:
 ```sh
 docker compose build && docker compose --profile test up --build test
 ```
-then wait for the next minute to hit for the test cron script to run.
+The test container runs `test-interface.py` immediately and exits with 0 on success.
