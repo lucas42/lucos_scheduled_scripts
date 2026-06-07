@@ -1,7 +1,7 @@
 # ADR-0001: Decommission the base image in favour of a container-native cron (supercronic)
 
 **Date:** 2026-06-07
-**Status:** Proposed
+**Status:** Accepted
 **Discussion:** https://github.com/lucas42/lucos_scheduled_scripts/issues/44
 
 ## Context
